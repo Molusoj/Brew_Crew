@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1040151176472",
+    "firebase_url": "https://molusoj-brew-crew.firebaseio.com",
+    "project_id": "molusoj-brew-crew",
+    "storage_bucket": "molusoj-brew-crew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040151176472:android:1eb5e8a9c77deff46daa6d",
+        "android_client_info": {
+          "package_name": "com.molusoj.brew_crew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040151176472-cuno2jc27vsevdc5p4j9bdhlccn8oud1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdL0SO4D41QsGg7FM9C8_85_w8URptvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040151176472-cuno2jc27vsevdc5p4j9bdhlccn8oud1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
