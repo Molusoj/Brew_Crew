@@ -1,4 +1,5 @@
 import 'package:brew_crew/services/auth.dart';
+import 'package:brew_crew/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -41,7 +42,7 @@ class _SignInState extends State<SignIn> {
                 children: [
                   SizedBox(height: 20),
                   TextFormField(
-                    decoration: InputDecoration(hintText: "Email"),
+                    decoration: textInputDecoration.copyWith(    hintText: "Email",),
                     validator: (val) => val.isEmpty ? "Enter an Email" : null,
                     onChanged: (val) {
                       setState(() => email = val);
@@ -50,7 +51,7 @@ class _SignInState extends State<SignIn> {
                   SizedBox(height: 20),
                   TextFormField(
                     obscureText: true,
-                    decoration: InputDecoration(hintText: "Password"),
+                    decoration: textInputDecoration.copyWith(    hintText: "Password",),
                     validator: (val) => val.length <= 6
                         ? "Enter a Password 6+ chars long"
                         : null,
@@ -70,7 +71,7 @@ class _SignInState extends State<SignIn> {
                         dynamic result = await _auth
                             .signInWithEmailAndPassword(email, password);
                         if (result == null) {
-                          setState(() => error = 'please supply a valid email and password');
+                          setState(() => error = 'Please supply a valid email and password');
                         }
                       }
                     },
