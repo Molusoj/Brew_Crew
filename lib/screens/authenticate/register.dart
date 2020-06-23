@@ -1,5 +1,6 @@
 import 'package:brew_crew/services/auth.dart';
 import 'package:brew_crew/shared/constants.dart';
+import 'package:brew_crew/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -13,6 +14,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  bool loading = false;
 
   String email = "";
   String password = "";
@@ -35,7 +37,7 @@ class _RegisterState extends State<Register> {
                 label: Text("Sign In"))
           ],
         ),
-        body: Container(
+        body: loading ? Loading() : Container(
             padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
             child: Form(
               key: _formKey,
@@ -73,11 +75,17 @@ class _RegisterState extends State<Register> {
                       ),
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
+                          setState(() {
+                            loading = true;
+                          });
                           dynamic result = await _auth
                               .registerWithEmailAndPassword(email, password);
                           if (result == null) {
-                            setState(() => error =
-                                'please supply a valid email and password');
+                            setState(() {
+                              error =
+                                  'Please supply a valid email and password';
+                              loading = false;
+                            });
                           }
                         }
                       }),
